@@ -2,6 +2,7 @@ import React from 'react'
 import unsplash from '../api/unsplash'
 import SearchBar from './SearchBar'
 import ImageList from './ImageList'
+import './ImageList.css'
 
 class App extends React.Component{
 
@@ -20,7 +21,9 @@ class App extends React.Component{
         return(
             <div>
                 < SearchBar onSubmit={this.onFormSubmit} />
-                < ImageList images={this.state.images}/>
+                <div className="image-list">
+                < ImageList  images={this.state.images}/>
+                </div>
             </div>
         )
     }

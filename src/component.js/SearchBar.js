@@ -1,8 +1,9 @@
 import React from 'react';
+import './SearchBar.css'
 
 class SearchBar extends React.Component {
 
-    state = {term : 'Hello'}
+    state = {term : ''}
 
     submitForm = (e)=>{
         e.preventDefault()
@@ -11,12 +12,12 @@ class SearchBar extends React.Component {
 
     render(){
         return ( 
-            <div>
+            <div className="SearchBar">
                 <form action="" onSubmit={this.submitForm}>
                     <input type="text" onChange={e => this.setState({term:e.target.value})} value={this.state.term}/>
+                    <button type="submit">Search</button>
                     <br/>
-                    <br/>
-                    <label htmlFor="">enter text</label>
+                    <label htmlFor="">enter text to search for images</label>
                 </form>
             </div>
         )
